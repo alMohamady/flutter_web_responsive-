@@ -10,6 +10,7 @@ class _HeadBarState extends State<HeadBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(10),
       child: Row(
         children: [
           Text(
@@ -19,6 +20,7 @@ class _HeadBarState extends State<HeadBar> {
               fontWeight: FontWeight.bold,
             ),
           ),
+          Spacer(),
           Row(
             children: [
               navIcon(icon: Icons.search),
@@ -32,9 +34,12 @@ class _HeadBarState extends State<HeadBar> {
   }
 
   Widget navIcon({icon}) {
-    return Icon(
-      icon,
-      color: AppColor.white,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Icon(
+        icon,
+        color: AppColor.black,
+      ),
     );
   }
 }

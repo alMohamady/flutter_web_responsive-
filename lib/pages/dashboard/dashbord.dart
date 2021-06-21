@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/pages/dashboard/widget/headbar.dart';
+import 'package:hello_world/pages/dashboard/widget/notfication.dart';
 import 'package:hello_world/shared/app_colors.dart';
 
 class Dashbord extends StatefulWidget {
@@ -16,7 +17,22 @@ class _DashbordState extends State<Dashbord> {
       decoration: BoxDecoration(
           color: AppColor.bgColor, borderRadius: BorderRadius.circular(30)),
       child: Column(
-        children: [HeadBar()],
+        children: [
+          HeadBar(),
+          Expanded(
+              child: Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Container(
+                  child: Column(
+                    children: [Notfication()],
+                  ),
+                ),
+              )
+            ],
+          ))
+        ],
       ),
     );
   }
