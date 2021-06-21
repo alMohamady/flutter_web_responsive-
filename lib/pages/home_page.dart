@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/pages/widgets/side_bar_menu.dart';
 import 'package:hello_world/shared/app_colors.dart';
+import 'dashboard/dashbord.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(child: SideBar()),
 
             //Main Body
-            Expanded(flex: 4, child: Container())
+            Expanded(flex: 4, child: Dashbord())
           ],
         ),
       ),

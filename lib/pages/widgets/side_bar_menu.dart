@@ -56,6 +56,8 @@ class _SideBarState extends State<SideBar> {
               icon: "assets/menu_settings.png",
               press: () {},
             ),
+            Spacer(),
+            Image.asset("assets/sidebar_image.png")
           ],
         ),
       ),
@@ -73,7 +75,12 @@ class DrawerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.asset(icon),
+      horizontalTitleGap: 0.0,
+      leading: Image.asset(
+        icon,
+        color: AppColor.white,
+        height: 16,
+      ),
       title: Text(
         title,
         style: TextStyle(color: AppColor.white),
