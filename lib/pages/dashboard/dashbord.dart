@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/pages/dashboard/widget/headbar.dart';
 import 'package:hello_world/pages/dashboard/widget/notfication.dart';
+import 'package:hello_world/pages/dashboard/widget/table_of_emp_data.dart';
 import 'package:hello_world/shared/app_colors.dart';
 
 class Dashbord extends StatefulWidget {
@@ -26,10 +27,14 @@ class _DashbordState extends State<Dashbord> {
                 flex: 2,
                 child: Container(
                   child: Column(
-                    children: [Notfication()],
+                    children: [Notfication(), TableOfEmpData()],
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Expanded(child: Container())
             ],
           ))
         ],

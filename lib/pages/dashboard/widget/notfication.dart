@@ -26,8 +26,33 @@ class _NotficationState extends State<Notfication> {
                     TextSpan(
                         text: "New Web site",
                         style: TextStyle(fontWeight: FontWeight.bold)),
-                  ]))
+                  ])),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                  " An example of the Lorem ipsum placeholder\n text on a green ans white webpage. \nUsing Lorem ipsum to focus attention on graphic \n elements in a webpage design proposal ",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: AppColor.black,
+                  )),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Read More..",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: AppColor.black,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline),
+              )
             ],
+          ),
+          Spacer(),
+          Image.asset(
+            "assets/disk_image.png",
+            height: 150,
           )
         ],
       ),
