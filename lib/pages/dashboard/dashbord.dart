@@ -24,6 +24,7 @@ class _DashbordState extends State<Dashbord> {
           Expanded(
               child: SingleChildScrollView(
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                   flex: 2,
@@ -44,6 +45,7 @@ class _DashbordState extends State<Dashbord> {
                 ),
                 Expanded(
                     child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
                     children: [
                       CalenderWidget(),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_world/shared/app_colors.dart';
 import 'package:intl/intl.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class CalenderWidget extends StatefulWidget {
   @override
@@ -21,6 +22,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 "${DateFormat("MMM, yyyy").format(_dateTime)}",
@@ -49,6 +51,33 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                 ],
               )
             ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          TableCalendar(
+            focusedDay: _dateTime,
+            firstDay: DateTime.utc(2009),
+            lastDay: DateTime.utc(2050),
+            headerVisible: false,
+            onFormatChanged: (result) {},
+            daysOfWeekStyle: DaysOfWeekStyle(
+                dowTextFormatter: (date, local) {
+                  return DateFormat("EEE").format(date).toUpperCase();
+                },
+                weekdayStyle: TextStyle(fontWeight: FontWeight.bold),
+                weekendStyle:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.red)),
+            calendarStyle: CalendarStyle(
+              todayDecoration: BoxDecoration(
+                  color: AppColor.mainColor, shape: BoxShape.circle),
+              markerDecoration: BoxDecoration(
+                  color: AppColor.mainColor, shape: BoxShape.circle),
+            ),
+            onPageChanged: (theDate) {
+              _dateTime = theDate;
+              setState(() {});
+            },
           )
         ],
       ),
