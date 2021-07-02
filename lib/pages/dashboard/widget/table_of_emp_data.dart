@@ -47,6 +47,7 @@ class _TableOfEmpDataState extends State<TableOfEmpData> {
           Table(
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               children: [
+                // table head
                 TableRow(
                     decoration: BoxDecoration(
                         border: Border(
@@ -58,10 +59,77 @@ class _TableOfEmpDataState extends State<TableOfEmpData> {
                       tableHeader("Status"),
                       tableHeader(""),
                     ]),
+                //table data
+                tableRow(context,
+                    name: "al mohamady",
+                    image: "assets/user2.jpg",
+                    position: "programmer",
+                    status: "Active"),
+                tableRow(context,
+                    name: "Saly",
+                    image: "assets/user1.jpg",
+                    position: "tester",
+                    status: "Active"),
+                tableRow(context,
+                    name: "john",
+                    image: "assets/user3.jpg",
+                    position: "worker",
+                    status: "Active"),
+                tableRow(context,
+                    name: "sadasda",
+                    image: "assets/user4.jpg",
+                    position: "nothing",
+                    status: "Active"),
               ])
         ],
       ),
     );
+  }
+
+  TableRow tableRow(context, {name, image, position, status}) {
+    return TableRow(
+        decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: Colors.grey, width: 0.5))),
+        children: [
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 15),
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(1000),
+                  child: Image.asset(
+                    image,
+                    width: 30,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(name)
+              ],
+            ),
+          ),
+          Text(position),
+          Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle, color: AppColor.mainColor),
+                height: 10,
+                width: 10,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(status),
+            ],
+          ),
+          Image.asset(
+            "assets/more.png",
+            color: Colors.grey,
+            height: 30,
+          )
+        ]);
   }
 
   Widget tableHeader(text) {
