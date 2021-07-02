@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/pages/dashboard/widget/calender_widget.dart';
 import 'package:hello_world/pages/dashboard/widget/headbar.dart';
 import 'package:hello_world/pages/dashboard/widget/notfication.dart';
 import 'package:hello_world/pages/dashboard/widget/table_of_emp_data.dart';
@@ -21,21 +22,36 @@ class _DashbordState extends State<Dashbord> {
         children: [
           HeadBar(),
           Expanded(
-              child: Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Container(
-                  child: Column(
-                    children: [Notfication(), TableOfEmpData()],
+              child: SingleChildScrollView(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Notfication(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TableOfEmpData()
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(child: Container())
-            ],
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                    child: Container(
+                  child: Column(
+                    children: [
+                      CalenderWidget(),
+                    ],
+                  ),
+                ))
+              ],
+            ),
           ))
         ],
       ),

@@ -80,7 +80,20 @@ class _TableOfEmpDataState extends State<TableOfEmpData> {
                     image: "assets/user4.jpg",
                     position: "nothing",
                     status: "Active"),
-              ])
+              ]),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("View 4 form 40"),
+                Text(
+                  "View All",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
