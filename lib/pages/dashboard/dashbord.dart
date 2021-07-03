@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/pages/dashboard/widget/calender_widget.dart';
 import 'package:hello_world/pages/dashboard/widget/headbar.dart';
 import 'package:hello_world/pages/dashboard/widget/notfication.dart';
+import 'package:hello_world/pages/dashboard/widget/profile.dart';
 import 'package:hello_world/pages/dashboard/widget/table_of_emp_data.dart';
 import 'package:hello_world/shared/app_colors.dart';
 
@@ -49,6 +50,10 @@ class _DashbordState extends State<Dashbord> {
                   child: Column(
                     children: [
                       CalenderWidget(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Profile(),
                     ],
                   ),
                 ))
