@@ -49,11 +49,13 @@ class _NotficationState extends State<Notfication> {
               )
             ],
           ),
-          Spacer(),
-          Image.asset(
-            "assets/disk_image.png",
-            height: 150,
-          )
+          if (MediaQuery.of(context).size.width >= 673) ...{
+            Spacer(),
+            Image.asset(
+              "assets/disk_image.png",
+              height: 150,
+            )
+          },
         ],
       ),
     );
