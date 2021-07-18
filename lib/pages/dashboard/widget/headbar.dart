@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/controls/menu_controller.dart';
 import 'package:hello_world/shared/app_colors.dart';
+import 'package:hello_world/shared/app_responsive.dart';
+import 'package:provider/provider.dart';
 
 class HeadBar extends StatefulWidget {
   @override
@@ -13,6 +16,11 @@ class _HeadBarState extends State<HeadBar> {
       margin: EdgeInsets.all(10),
       child: Row(
         children: [
+          if (!AppResponsive.isDesktop(context))
+            IconButton(
+                icon: Icon(Icons.menu, color: AppColor.bgSideMenu),
+                onPressed: Provider.of<MenuController>(context, listen: false)
+                    .controlMenu),
           Text(
             "Dashboard",
             style: TextStyle(
