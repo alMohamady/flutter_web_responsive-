@@ -5,6 +5,7 @@ import 'package:hello_world/pages/dashboard/widget/notfication.dart';
 import 'package:hello_world/pages/dashboard/widget/profile.dart';
 import 'package:hello_world/pages/dashboard/widget/table_of_emp_data.dart';
 import 'package:hello_world/shared/app_colors.dart';
+import 'package:hello_world/shared/app_responsive.dart';
 
 class Dashbord extends StatefulWidget {
   @override
@@ -36,6 +37,13 @@ class _DashbordState extends State<Dashbord> {
                         SizedBox(
                           height: 20,
                         ),
+                        if (AppResponsive.isMobile(context)) ...{
+                          CalenderWidget(),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Profile(),
+                        },
                         TableOfEmpData()
                       ],
                     ),
@@ -44,19 +52,20 @@ class _DashbordState extends State<Dashbord> {
                 SizedBox(
                   width: 10,
                 ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      CalenderWidget(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Profile(),
-                    ],
-                  ),
-                ))
+                if (!AppResponsive.isMobile(context))
+                  Expanded(
+                      child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    child: Column(
+                      children: [
+                        CalenderWidget(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Profile(),
+                      ],
+                    ),
+                  ))
               ],
             ),
           ))

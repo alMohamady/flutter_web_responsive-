@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/shared/app_colors.dart';
+import 'package:hello_world/shared/app_responsive.dart';
 
 class TableOfEmpData extends StatefulWidget {
   @override
@@ -55,9 +56,10 @@ class _TableOfEmpDataState extends State<TableOfEmpData> {
                                 BorderSide(color: Colors.grey, width: 0.5))),
                     children: [
                       tableHeader("Emp Name"),
-                      tableHeader("Position"),
+                      if (!AppResponsive.isMobile(context))
+                        tableHeader("Position"),
                       tableHeader("Status"),
-                      tableHeader(""),
+                      if (AppResponsive.isDesktop(context)) tableHeader(""),
                     ]),
                 //table data
                 tableRow(context,
@@ -122,7 +124,7 @@ class _TableOfEmpDataState extends State<TableOfEmpData> {
               ],
             ),
           ),
-          Text(position),
+          if (!AppResponsive.isMobile(context)) Text(position),
           Row(
             children: [
               Container(
@@ -137,11 +139,12 @@ class _TableOfEmpDataState extends State<TableOfEmpData> {
               Text(status),
             ],
           ),
-          Image.asset(
-            "assets/more.png",
-            color: Colors.grey,
-            height: 30,
-          )
+          if (AppResponsive.isDesktop(context))
+            Image.asset(
+              "assets/more.png",
+              color: Colors.grey,
+              height: 30,
+            )
         ]);
   }
 
